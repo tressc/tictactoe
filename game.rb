@@ -7,10 +7,10 @@ class Game
   def initialize(board = Board.new, player1, player2)
     @board = board
     @players = {
-      :X => player1,
-      :O => player2
+      "X" => player1,
+      "O" => player2
     }
-    @turn = :X
+    @turn = "X"
   end
 
   def run
@@ -89,10 +89,10 @@ class Game
   end
 
   def switch_turn
-    if @turn == :X
-      @turn = :O
+    if @turn == "X"
+      @turn = "O"
     else
-      @turn = :X
+      @turn = "X"
     end
   end
 end

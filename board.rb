@@ -39,10 +39,10 @@ class Board
 
   def winner
     WINNING_GROUPS.each do |group|
-      if group.all? { |pos| self[pos] == :X }
-        return :X
-      elsif group.all? { |pos| self[pos] == :O }
-        return :O
+      if group.all? { |pos| self[pos] == "X" }
+        return "X"
+      elsif group.all? { |pos| self[pos] == "O" }
+        return "O"
       end
     end
     # if no winner is found
