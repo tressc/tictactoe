@@ -1,7 +1,8 @@
 require_relative "board"
 
 class Game
-  attr_reader :board, :players, :turn
+  attr_accessor :board
+  attr_reader :players, :turn
 
   def initialize(board = Board.new, player1, player2)
     @board = board
@@ -33,6 +34,22 @@ class Game
       puts players[self.board.winner].name + " has won!"
     else
       puts "Cat's game!"
+    end
+
+    response = nil
+    puts "Play again? (y/n)"
+    while ! response
+      response = gets.chomp
+      if response == "y"
+        self.board = Board.new
+        self.run
+      elsif response == "n"
+        return
+      else
+        system "clear"
+        puts "Please enter either 'y' or 'n'."
+        response = nil
+      end
     end
   end
 

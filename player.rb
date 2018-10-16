@@ -16,7 +16,7 @@ class Player
     if self.valid_input?(input)
       return input
     else
-      self.request_move("Invalid move. Valid move example: 0,2")
+      self.request_move("Invalid move. Valid move example: 1,2")
     end
   end
 
